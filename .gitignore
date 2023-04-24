@@ -1,0 +1,5 @@
+# Git ignore kaldi directory with all its contents
+kaldi/
+# Git remove kaldi directory from git cache
+git rm -r --cached kaldi/
+.vscode/

@@ -4,19 +4,19 @@ use-nnet2: True
 decoder:
     # All the properties nested here correspond to the kaldinnet2onlinedecoder GStreamer plugin properties.
     # Use gst-inspect-1.0 ./libgstkaldionline2.so kaldinnet2onlinedecoder to discover the available properties
-    nnet-mode : 3
-    use-threaded-decoder:  true
-    model : test/models/chinese/multi_cn_chain_sp_online/final.mdl
-    word-syms : test/models/chinese/multi_cn_chain_sp_online/words.txt
-    fst : test/models/chinese/multi_cn_chain_sp_online/HCLG.fst
-    mfcc-config : test/models/chinese/multi_cn_chain_sp_online/conf/mfcc.conf
-    ivector-extraction-config : test/models/chinese/multi_cn_chain_sp_online/conf/ivector_extractor.conf
+    nnet-mode: 3
+    use-threaded-decoder: true
+    model: test/models/chinese/multi_cn_chain_sp_online/final.mdl
+    word-syms: test/models/chinese/multi_cn_chain_sp_online/words.txt
+    fst: test/models/chinese/multi_cn_chain_sp_online/HCLG.fst
+    mfcc-config: test/models/chinese/multi_cn_chain_sp_online/conf/mfcc.conf
+    ivector-extraction-config: test/models/chinese/multi_cn_chain_sp_online/conf/ivector_extractor.conf
     max-active: 7000
     beam: 15.0
     lattice-beam: 6.0
     acoustic-scale: 1.0
-    do-endpointing : true
-    endpoint-silence-phones : "1:2:3:4:5:6:7:8:9:10:11:12:13:14:15"
+    do-endpointing: true
+    endpoint-silence-phones: "1:2:3:4:5:6:7:8:9:10:11:12:13:14:15"
     traceback-period-in-secs: 0.25
     chunk-length-in-secs: 0.25
     num-nbest: 1
@@ -34,12 +34,12 @@ post-processor: perl -npe 'BEGIN {use IO::Handle; STDOUT->autoflush(1);} sleep(1
 #full-post-processor: ./sample_full_post_processor.py
 
 logging:
-    version : 1
+    version: 1
     disable_existing_loggers: False
     formatters:
         simpleFormater:
-            format: '%(asctime)s - %(levelname)7s: %(name)10s: %(message)s'
-            datefmt: '%Y-%m-%d %H:%M:%S'
+            format: "%(asctime)s - %(levelname)7s: %(name)10s: %(message)s"
+            datefmt: "%Y-%m-%d %H:%M:%S"
     handlers:
         console:
             class: logging.StreamHandler

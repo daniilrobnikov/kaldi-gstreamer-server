@@ -5,17 +5,17 @@ decoder:
     # All the properties nested here correspond to the kaldinnet2onlinedecoder GStreamer plugin properties.
     # Use gst-inspect-1.0 ./libgstkaldionline2.so kaldinnet2onlinedecoder to discover the available properties
     use-threaded-decoder: True
-    model : test/models/english/librispeech_nnet_a_online/final.mdl
-    word-syms : test/models/english/librispeech_nnet_a_online/words.txt
-    fst : test/models/english/librispeech_nnet_a_online/HCLG.fst
-    mfcc-config : test/models/english/librispeech_nnet_a_online/conf/mfcc.conf
-    ivector-extraction-config : test/models/english/librispeech_nnet_a_online/conf/ivector_extractor.fixed.conf
+    model: test/models/english/librispeech_nnet_a_online/final.mdl
+    word-syms: test/models/english/librispeech_nnet_a_online/words.txt
+    fst: test/models/english/librispeech_nnet_a_online/HCLG.fst
+    mfcc-config: test/models/english/librispeech_nnet_a_online/conf/mfcc.conf
+    ivector-extraction-config: test/models/english/librispeech_nnet_a_online/conf/ivector_extractor.fixed.conf
     max-active: 10000
     beam: 10.0
     lattice-beam: 6.0
     acoustic-scale: 0.083
-    do-endpointing : true
-    endpoint-silence-phones : "1:2:3:4:5:6:7:8:9:10"
+    do-endpointing: true
+    endpoint-silence-phones: "1:2:3:4:5:6:7:8:9:10"
     traceback-period-in-secs: 0.25
     chunk-length-in-secs: 0.25
     num-nbest: 10
@@ -37,12 +37,12 @@ post-processor: perl -npe 'BEGIN {use IO::Handle; STDOUT->autoflush(1);} s/(.*)/
 #full-post-processor: ./sample_full_post_processor.py
 
 logging:
-    version : 1
+    version: 1
     disable_existing_loggers: False
     formatters:
         simpleFormater:
-            format: '%(asctime)s - %(levelname)7s: %(name)10s: %(message)s'
-            datefmt: '%Y-%m-%d %H:%M:%S'
+            format: "%(asctime)s - %(levelname)7s: %(name)10s: %(message)s"
+            datefmt: "%Y-%m-%d %H:%M:%S"
     handlers:
         console:
             class: logging.StreamHandler
